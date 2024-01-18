@@ -1,0 +1,296 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: var(--cor-titulo);
+}
+
+:root {
+  --cor-fundo: #080C27;
+  --cor-titulo: #ffffff;
+  --cor-paragrafo: #A1A1AA;
+  --cor1-gradiente: #9572FC;
+  --cor2-gradiente: #43E7AD;
+  --cor3-gradiente: #E2D45C;
+  --cor-hover-background: #091044;
+  --cor-fundo-secao: #090E33;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+body {
+  background-color: var(--cor-fundo);
+
+}
+
+.cabecalho {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  max-width: 840px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+}
+
+.redes-sociais {
+  grid-column: 2;
+}
+
+.foto-perfil {
+  width: 130px;
+  background-image: linear-gradient(to right, var(--cor1-gradiente), var(--cor2-gradiente), var(--cor3-gradiente));
+  border-radius: 50%;
+  display: flex;
+  padding: 4px;
+  transition: transform .3s;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.1);
+}
+
+.foto {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.conteudo {
+  max-width: 1280px;
+  width: 90%;
+  margin: 100px auto 32px;
+  display: grid;
+  gap: 24px;
+
+}
+
+.conteudo * {
+  border-radius: 8px;
+}
+
+.conteiner {
+  background-color: var(--cor-fundo-secao);
+  padding: 24px 32px 32px;
+}
+
+.conteudo-dividido {
+  margin-bottom: 120px;
+  padding: 4px 0px 0px;
+  background-image: linear-gradient(to right, var(--cor1-gradiente), var(--cor2-gradiente), var(--cor3-gradiente));
+  border-top: 10px;
+  border-radius: 10px;
+}
+
+.conteudo-dividido h2 {
+  letter-spacing: -0.47px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 16px;
+}
+
+p {
+  margin-top: 10px;
+  color: var(--cor-paragrafo);
+  letter-spacing: -0.0112rem;
+}
+
+
+.projetos-design {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.projeto-figma {
+  width: 100%;
+  min-height: 350px;
+}
+
+.projetos-frontend {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  width: 100%;
+}
+
+.projeto-front {
+  max-width: 100%;
+}
+
+.projetos-frontend li,
+.projetos-design li {
+  padding: 10px;
+}
+
+.rodape {
+  padding: 4px 0px 0px;
+  background-image: linear-gradient(to right, var(--cor1-gradiente), var(--cor2-gradiente), var(--cor3-gradiente));
+  border-top: 10px;
+}
+
+.rodape .rede-list {
+  justify-content: center;
+  padding: 32px;
+  background-color: var(--cor-fundo-secao);
+}
+
+li {
+  transition: transform .3s;
+}
+
+li:hover,
+li:active {
+  transform: scale(1.1);
+}
+
+.projetos-frontend li:hover,
+.projetos-frontend li:active,
+.projetos-design li:hover,
+.projetos-design li:active {
+  background-color: var(--cor-hover-background);
+}
+
+
+/*Animação*/
+
+.foto-perfil {
+  animation: fromTop .7s .2s backwards;
+}
+
+.conteudo-dividido {
+  animation: fromBottom .7s backwards;
+}
+
+.conteudo-dividido:nth-child(1) {
+  animation-delay: .0s;
+}
+
+.conteudo-dividido:nth-child(2) {
+  animation-delay: .3s;
+}
+
+.conteudo-dividido:nth-child(3) {
+  animation-delay: .6s;
+}
+
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  top {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  top {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width:780px) {
+
+  .cabecalho {
+    gap: 20px;
+  }
+
+  .projetos-design,
+  .projetos-frontend {
+    gap: 40px;
+  }
+
+}
+
+
+@media screen and (max-width:540px) {
+
+  .projetos-frontend,
+  .projetos-design {
+    grid-template-columns: 1fr;
+  }
+
+  .redes-sociais {
+    grid-column: 1;
+  }
+
+  .cabecalho {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+  }
+
+  .apresentacao {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  h2,
+  h3 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.75rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  .conteudo {
+    margin-top: 30px;
+  }
+
+  .conteiner {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 15px 10px;
+  }
+
+  .projeto {
+    margin-bottom: 20px;
+  }
+
+  .conteudo-dividido {
+    margin-bottom: 30px;
+  }
+
+}
+
+@media screen and (max-width: 414px) {
+  .cabecalho {
+    padding: 10px;
+  }
+
+}
+
+@media screen and (max-width: 280px) {
+  .rede-list {
+    gap: 15px;
+  }
+
+}
